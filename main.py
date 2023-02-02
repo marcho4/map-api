@@ -3,7 +3,6 @@ from PyQt5.QtWidgets import QMainWindow, QApplication
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPixmap
 import requests
-import os
 import sys
 
 
@@ -42,6 +41,22 @@ class MainWindow(QMainWindow):
         if e.key() == Qt.Key_PageUp:
             if self.map_zoom < 17:
                 self.map_zoom += 1
+            self.render_map()
+        if e.key() == Qt.Key_Right:
+            if self.map_ll[0] < 180:
+                self.map_ll[0] += 0.01
+            self.render_map()
+        if e.key() == Qt.Key_Left:
+            if self.map_ll[0] < 180:
+                self.map_ll[0] -= 0.01
+            self.render_map()
+        if e.key() == Qt.Key_Up:
+            if self.map_ll[1] < 180:
+                self.map_ll[1] += 0.01
+            self.render_map()
+        if e.key() == Qt.Key_Down:
+            if self.map_ll[1] < 180:
+                self.map_ll[1] -= 0.01
             self.render_map()
 
 
