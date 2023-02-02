@@ -43,19 +43,19 @@ class MainWindow(QMainWindow):
                 self.map_zoom += 1
             self.render_map()
         if e.key() == Qt.Key_Right:
-            if self.map_ll[0] < 180:
+            if 0 < self.map_ll[0] < 180:
                 self.map_ll[0] += 0.01
             self.render_map()
         if e.key() == Qt.Key_Left:
-            if self.map_ll[0] < 180:
+            if 0 < self.map_ll[0] < 180:
                 self.map_ll[0] -= 0.01
             self.render_map()
         if e.key() == Qt.Key_Up:
-            if self.map_ll[1] < 180:
+            if 0 < self.map_ll[1] < 180:
                 self.map_ll[1] += 0.01
             self.render_map()
         if e.key() == Qt.Key_Down:
-            if self.map_ll[1] < 180:
+            if 0 < self.map_ll[1] < 180:
                 self.map_ll[1] -= 0.01
             self.render_map()
 
